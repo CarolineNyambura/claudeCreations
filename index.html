@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CLAUDE CREATIONS</title>
+	<script src="js/mithril/mithril.min.js"></script>
+</head>
+<body>
+<h1>Welcome to claude creations</h1>
+<script type="text/javascript">
+	var page1 = {
+		view:function(){
+			return m(".app",[
+				m("div","page1"),
+				m("a",{
+					href:"/page2",
+					config:m.route
+				},"page2")
+
+			])
+		}
+	}
+
+	var page2 = {
+		view:function(){
+			return m("div",[
+				m("div","page2"),
+				m("a",{
+					href:"/",
+					config:m.route
+				},"page1")
+
+			])
+		}
+	}
+
+	m.route(document.body,"/",{
+		"/":page1,
+		"/page2":page2
+	})
+
+</script>
+</body>
+</html>
